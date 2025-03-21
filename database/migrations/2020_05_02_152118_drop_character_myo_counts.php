@@ -39,7 +39,7 @@ class DropCharacterMyoCounts extends Migration
         $users = User::all();
         foreach($users as $user) {
             $user->settings->character_count = $user->characters->count();
-            $user_settings->myo_slot_count = $user->myoSlots->count();
+            $user->settings->myo_slot_count = $user->myoSlots->count();
             $user->settings->save();
         }
     }
